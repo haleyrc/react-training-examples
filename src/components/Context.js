@@ -1,35 +1,32 @@
-import React, { useState, useContext } from "react";
-import { StyledButton } from "./Button";
+import React, { useState, useContext } from "react"
+import { StyledButton } from "./Button"
 
-const LoggedInContext = React.createContext(false);
+const LoggedInContext = React.createContext(false)
 
-const ContextApp = () => {
-  const [loggedIn, setLoggedIn] = useState(false);
+const App = () => {
+  const [loggedIn, setLoggedIn] = useState(false)
   return (
     <LoggedInContext.Provider value={loggedIn}>
-      <div>
-        <Toggle isLoggedIn={loggedIn} onToggle={() => setLoggedIn(!loggedIn)} />
-        <div>I'm available to everyone</div>
-        <SecureDiv />
-      </div>
+      <Toggle isLoggedIn={loggedIn} onToggle={() => setLoggedIn(!loggedIn)} />
+      <div>I'm available to everyone</div>
+      <SecureDiv />
     </LoggedInContext.Provider>
-  );
-};
+  )
+}
 
 const SecureDiv = () => {
-  const isLoggedIn = useContext(LoggedInContext);
+  const isLoggedIn = useContext(LoggedInContext)
   return isLoggedIn ? (
     <div>Visible only when logged in</div>
   ) : (
     <div>Please login to view</div>
-  );
-};
+  )
+}
 
 const Toggle = ({ isLoggedIn, onToggle }) => (
-  <StyledButton
-    handleOnClick={onToggle}
-    title={isLoggedIn ? "Log Out" : "Log In"}
-  />
-);
+  <StyledButton onClick={onToggle}>
+    {isLoggedIn ? "Log Out" : "Log In"}
+  </StyledButton>
+)
 
-export default ContextApp;
+export default App

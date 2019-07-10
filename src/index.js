@@ -1,7 +1,7 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from "react"
+import ReactDOM from "react-dom"
 
-import { Button, StyledButton } from "./components/Button";
+import { Button, StyledButton } from "./components/Button"
 import {
   RainbowCounter,
   UselessCounter,
@@ -10,11 +10,12 @@ import {
   PropsCounter,
   CounterWithButtons,
   CounterWithPrettyButtons
-} from "./components/Counter";
-import { Gallery, Exhibit } from "./components/Gallery";
-import ContextApp from "./components/Context";
+} from "./components/Counter"
+import { Greeter, GreeterUpdater } from "./components/Greeter"
+import { Gallery, Exhibit } from "./components/Gallery"
+import ContextApp from "./components/Context"
 
-import "./styles.css";
+import "./styles.css"
 
 function App() {
   return (
@@ -71,10 +72,15 @@ function App() {
         <Exhibit title="Context">
           <ContextApp />
         </Exhibit>
+
+        <Exhibit title="Greeters with useEffect">
+          <Greeter />
+          <GreeterUpdater />
+        </Exhibit>
       </Gallery>
     </div>
-  );
+  )
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+const rootElement = document.getElementById("root")
+ReactDOM.render(<App />, rootElement)
