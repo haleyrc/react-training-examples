@@ -1,5 +1,5 @@
-import React, { Component } from "react"
-import { Button, StyledButton } from "./Button"
+import React from "react"
+import { StyledButton } from "./Button"
 
 function UselessCounter() {
   return (

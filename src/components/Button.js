@@ -18,6 +18,10 @@ const StyledButton = styled.button`
   }
 `
 
+const Button = ({ title, handleOnClick }) => {
+  return <button onClick={handleOnClick}>{title}</button>
+}
+
 const SelfAwareButton = () => {
   const [clicked, setClicked] = useState(0)
   return (
@@ -27,4 +31,4 @@ const SelfAwareButton = () => {
   )
 }
 
-export { StyledButton, SelfAwareButton }
+export { StyledButton, SelfAwareButton, Button }

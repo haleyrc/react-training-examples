@@ -30,9 +30,10 @@ function App() {
 
         <Exhibit title="A Styled Component">
           <StyledButton
-            title="Click Me"
             handleOnClick={() => console.log("Regular button clicked")}
-          />
+          >
+            Click Me
+          </StyledButton>
         </Exhibit>
 
         <Exhibit title="A Useless Counter">
